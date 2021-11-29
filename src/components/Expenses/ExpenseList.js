@@ -7,7 +7,7 @@ import './Expenses.css';
 
 function ExpenseList(props) {
   const { expenses } = props;
-  const [filterYear, setFilterYear] = useState(2022);
+  const [filterYear, setFilterYear] = useState('2022');
 
   const changeYear = (year) => {
     setFilterYear(year);
@@ -16,8 +16,8 @@ function ExpenseList(props) {
 
   return (
     <div>
-      <ExpensesFilter onChangeYear={changeYear} />
       <Card className="expenses">
+      <ExpensesFilter filterYear={filterYear} onChangeYear={changeYear} />
         {expenses.map(expense => (
           <ExpenseItem key={expense.id} {...expense} />
         ))}
