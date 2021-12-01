@@ -8,6 +8,7 @@ function ExpenseItem(props) {
   const { title, amount, date } = props;
 
   return (
+    <li>
     <Card className="expense-item">
       <ExpenseDate date={date} />
       <div className="expense-item__description">
@@ -15,6 +16,7 @@ function ExpenseItem(props) {
         <div className="expense-item__price">${amount}</div>
       </div>
   </Card>
+  </li>
   )
 }
 
