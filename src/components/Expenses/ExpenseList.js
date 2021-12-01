@@ -15,13 +15,19 @@ function ExpenseList(props) {
 
   const filteredExpenses = expenses.filter(expense => expense.date.getFullYear() === parseInt(filterYear));
 
+  let expensesContent = <p>No expenses found</p>;
+
+  if (filteredExpenses.length > 0) {
+    expensesContent = filteredExpenses.map(expense => (
+          <ExpenseItem key={expense.id} {...expense} />
+        ));
+  }
+
   return (
     <div>
       <Card className="expenses">
       <ExpensesFilter filterYear={filterYear} onChangeYear={changeYear} />
-        {filteredExpenses.map(expense => (
-          <ExpenseItem key={expense.id} {...expense} />
-        ))}
+        {expensesContent}
       </Card>
     </div>
   );
