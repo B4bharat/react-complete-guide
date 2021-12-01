@@ -5,7 +5,7 @@ import ExpensesFilter from './ExpensesFilter';
 
 import './Expenses.css';
 
-function ExpenseList(props) {
+function Expenses(props) {
   const { expenses } = props;
   const [filterYear, setFilterYear] = useState('2021');
 
@@ -33,4 +33,4 @@ function ExpenseList(props) {
   );
 }
 
-export default ExpenseList;
+export default Expenses;
